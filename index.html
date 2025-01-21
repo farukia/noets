@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Noets </title>
+    
+   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- them todo apps weren't giving me the vibes-->
+
+    <h2 id="greeting"> Good morning</h2>
+
+    <!-- buttonsss -->
+    <div class="actionButtons center">
+        <div class="arrow" style="Margin: 5px;" onClick="showAdd()">+</div>
+        <div class="arrow" style="Margin: 5px;" onClick="showUser()"><i class="fa fa-user"style="-webkit-text-stroke: 0.0001px;"></i></div>
+        <div class="arrow" style="Margin: 5px;" onClick="deleteQuote()"><i class="fa fa-trash"style="-webkit-text-stroke: 0.0001px;"></i></div>
+        <div class="arrow" style="Margin: 5px;" onClick="showEmojis()"><i class="fa fa-smile-o"></i></div>
+      </div>
+
+    <div class="center">
+        <!-- Add Quote -->
+        <input type="text" id="quoteText" placeholder="Your quote...">
+        <button id="addButton" onClick="add()"> Add </button>
+        
+        <!-- Add User -->
+        <input type="text" id="userText" placeholder="Your new username...">
+        <button id="userButton" onClick="addUser()"> Add </button>
+
+        <!-- Emojissss -->
+        <textarea id="emojiText">😀😁😄😇🙂😍🥰😕🤩🥳🤪👍✊🤞🫰✌️🤘🤟👌💪✍️👋☝️🧑‍🔬👩‍🔬🎻🥇🥈🏅🧩🎨🏹⛳🎹🎼🧬🦠🧫🧪🧸🎈📓✏️✒️📌📏📐📖📚🎐🗝️🪩📕⏳❤️💔❗⁉️🚩❤️‍🔥❣️💡🧠👀</textarea>
+    </div>
+
+    <div class="card" style="display: table; float: none; margin: 20px auto; text-align: center; height: 200px;">
+        <div style="display: table-cell; vertical-align: middle;">
+        <h2 id="events-title" style="text-align: center; font-size: 30px;">Hi there! </h2>
+        <p id="events-content"> Hope you're having a great day ♡ </p>
+        </div>
+      </div>
+      <div class="center" style="background-color: transparent; margin: 5px;">
+        <div class="arrow" style="margin: 5px;" onclick=prevCard()>←</div>
+        <div class="arrow" style="margin: 5px;" onclick=nextCard()>→</div>
+      </div>
+
+      <div class="center">
+        <input type="text" id="itemTitle" placeholder="Item Title...">
+        <input type="text" id="itemContent" placeholder="More info...">
+        <input type="date" id="itemDue">
+        <button onClick="addItem()">Add an Item</button>
+      </div>
+
+      <div id="items"></div>
+
+      <script src="script.js"></script>
+
+  
+</body>
+</html>

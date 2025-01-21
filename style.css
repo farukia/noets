@@ -1,0 +1,134 @@
+
+body {
+    margin:none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(33, 33, 33);
+    color: white;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+.card {
+    width: 24%;
+    padding: 30px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 12px 12px 0px 1px #1b1b1b;
+      /** #5591f2; **/
+    border: 2px solid #1b1b1b;
+      /** #5591f2; **/
+    margin: 20px;
+    transition-duration: 0.5s;
+    float: left;
+  }
+  
+  .card p {
+    color: lightslategray;
+  }
+  
+  .navbar .icon {
+    display: none;
+  }
+  
+  .card:hover {
+    transform: translateX(-2px) translateY(-5px);
+    box-shadow: 14px 17px 0px 1px #1b1b1b;
+      /** #5591f2; **/
+    transition-duration: 0.5s;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+
+  .arrow {
+    font-size: 30px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 100%;
+    border:5px solid #1b1b1b;
+    background-color: #1b1b1b;
+    color: white;
+    user-select: none;
+    transition-duration: 0.4s;
+  }
+  .arrow:hover {
+    cursor: pointer;
+    background-color: lightslategray;
+    color: #1b1b1b;
+    transition-duration: 0.4s;
+  }
+
+  .center {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin: 20px;
+  }
+
+  button {
+    background-color: #1b1b1b;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition-duration: 0.8s;
+}
+
+  button:hover {
+    background-color: lightslategrey;
+    color: #1b1b1b;
+    border: none;
+    transition-duration: 0.8s;
+    cursor:pointer;
+  }
+
+  input {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  #addButton {
+    display: none;
+  }
+  
+  #quoteText {
+    display: none;
+  }
+
+  #userButton {
+    display: none;
+  }
+
+  #userText {
+    display: none;
+  }
+
+  #emojiText {
+    display: none;
+  }
+
+
+input[type=date]{
+  background-color:rgb(33, 33, 33);
+  color: white;
+  border-style: solid;
+  border-color: #1b1b1b;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0px 1px #1b1b1b;
+  transition-duration: 0.8s;
+}
+
+input[type=date]:hover{
+  box-shadow: 7px 9px 0px 1px #1b1b1b;
+  transform: translateX(-2px) translateY(-5px);
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
