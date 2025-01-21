@@ -186,11 +186,7 @@ function addItem() {
   itemContents.push(y.value)
   itemDates.push(z.value)
   const para = document.createElement("div");
-  para.class = "card"
-  para.id = "card1"
-  const title = document.createElement("h2")
-  title.innerHTML = x.value
-  document.getElementById("card1").appendChild(title)
+  para.classList.add("card")
   document.getElementById("items").appendChild(para);
   let a = JSON.stringify(itemTitles)
   localStorage.setItem("itemTitles", a)
