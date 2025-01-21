@@ -132,3 +132,13 @@ input[type=date]:hover{
   transition-duration: 0.8s;
   cursor: pointer;
 }
+
+a {
+  color: white;
+  transition-duration: 0.8;
+}
+
+a:hover {
+  color:lightslategray;
+  transition-duration:0.8s;
+}

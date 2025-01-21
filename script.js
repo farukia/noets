@@ -6,7 +6,14 @@ var descriptions = [];
 var itemTitles = []
 var itemDates = []
 var itemContents = []
+var itemLinks = []
 
+//localStorage.setItem("itemTitles", itemTitles)
+//localStorage.setItem("itemDates", itemDates)
+//localStorage.setItem("itemContents", itemContents)
+//localStorage.setItem("itemLinks", itemLinks)
+
+var itemnum = 0
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -18,6 +25,7 @@ var emojiClickCount = 0;
 
 let retString = localStorage.getItem("quotes")
 let retUser = localStorage.getItem("user")
+
 
 if (retString != null) {
     events = JSON.parse(retString)
@@ -47,11 +55,38 @@ if (retString != null) {
     itemDates = JSON.parse(retString)
 }
 
+retString = localStorage.getItem("itemLinks")
+
+if (retString != null) {
+    itemLinks = JSON.parse(retString)
+}
+
 if (retUser != null) {
     user = JSON.parse(retUser)
 } else {
     user = "you"
 }
+
+for (let i = 0; i < itemTitles.length; i++) {
+  itemnum++;
+  const thecard = document.createElement("div");
+  thecard.classList.add("card")
+  thecard.id = "card" + itemnum.toString()
+  document.getElementById("items").appendChild(thecard);
+  const thetitle = document.createElement("h2");
+  thetitle.innerHTML = itemTitles[i]
+  document.getElementById("card" + itemnum.toString()).appendChild(thetitle)
+  const thecontent = document.createElement("p")
+  thecontent.innerHTML = itemContents[i]
+  document.getElementById("card" + itemnum.toString()).appendChild(thecontent)
+  const thedate = document.createElement("p")
+  thedate.innerHTML = itemDates[i]
+  document.getElementById("card"+ itemnum.toString()).appendChild(thedate)
+  const thelink = document.createElement("a")
+  thelink.href = itemLinks[i]
+  thelink.innerHTML = "view"
+  document.getElementById("card"+itemnum.toString()).appendChild(thelink)
+} 
 
 var card = document.getElementById('card')
 
@@ -179,21 +214,41 @@ function deleteQuote() {
 }
 
 function addItem() {
-  x = document.getElementById("itemTitle")
-  y = document.getElementById("itemContent")
-  z = document.getElementById("itemDue")
+  itemnum++;
+  let x = document.getElementById("itemTitle")
+  let y = document.getElementById("itemContent")
+  let z = document.getElementById("itemDue")
+  let q = document.getElementById("itemLink")
   itemTitles.push(x.value)
   itemContents.push(y.value)
   itemDates.push(z.value)
-  const para = document.createElement("div");
-  para.classList.add("card")
-  document.getElementById("items").appendChild(para);
+  itemLinks.push(q.value)
+  const thecard = document.createElement("div");
+  thecard.classList.add("card")
+  thecard.id = "card" + itemnum.toString()
+  document.getElementById("items").appendChild(thecard);
+  const thetitle = document.createElement("h2");
+  thetitle.innerHTML = x.value;
+  document.getElementById("card" + itemnum.toString()).appendChild(thetitle)
+  const thecontent = document.createElement("p")
+  thecontent.innerHTML = y.value;
+  document.getElementById("card" + itemnum.toString()).appendChild(thecontent)
+  const thedate = document.createElement("p")
+  thedate.innerHTML = z.value;
+  document.getElementById("card"+ itemnum.toString()).appendChild(thedate)
+  const thelink = document.createElement("a")
+  thelink.href = q.value
+  thelink.innerHTML = "view"
+  document.getElementById("card" + itemnum.toString()).appendChild(thelink)
   let a = JSON.stringify(itemTitles)
   localStorage.setItem("itemTitles", a)
   let b = JSON.stringify(itemContents)
   localStorage.setItem("itemContents", b)
   let c = JSON.stringify(itemDates)
   localStorage.setItem("itemDates", c)
+  let d = JSON.stringify(itemLinks)
+  localStorage.setItem("itemLinks", d)
   x.value = ""
   y.value = ""
+  q.value = ""
 }
